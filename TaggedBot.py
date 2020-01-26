@@ -302,21 +302,19 @@ if __name__ == "__main__":
                 single_user_url = static_user_url_list[randint(0, len(static_user_url_list) - 1)]
 
                 random_lander1 = ""
-                if i % randint(3, 7) == 0:
+                if i % 3 == 0:
                     random_lander1 = gls.single_lander_source()
                 tagged_bot.follow_and_dm_single_user(user_link=single_user_url[0], s_comp=single_comp, random_lander=random_lander1)
 
                 time.sleep(randint(5, 20))
 
                 random_lander2 = ""
-                if i % randint(3, 7) == 0:
+                if i % 7 == 0:
                     random_lander2 = gls.single_lander_source()
 
                 tagged_bot.status_updater_text(gls.status_home_page, single_phrase, random_lander2)
 
                 time.sleep(randint(5, 20))
-
-
 
         def start_cycle():
             print(f"starting cycle num")
