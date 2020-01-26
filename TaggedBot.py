@@ -21,11 +21,13 @@ class MainTaggedBot2:
         self.password = password
         self.my_proxy = my_proxy
         chrome_options = webdriver.ChromeOptions()
-        chrome_options.add_argument("--incognito")
         chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+        chrome_options.add_argument("--incognito")
         chrome_options.add_argument("--disable-dev-sgm-usage")
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--start-maximized")
+        chrome_options.add_argument("--disable-infobars")
+        chrome_options.add_argument("--disable-gpu")
         prefs = {"profile.managed_default_content_settings.images": 2}
         chrome_options.add_experimental_option("prefs", prefs)
         my_proxy_address = self.my_proxy.get_address()
@@ -253,7 +255,7 @@ class MainTaggedBot2:
             time.sleep(5)
 
             # self.driver.switch_to.window(new_tab)
-            self.driver.quit()
+            # self.driver.quit()
             print("clean up hopefully done")
         except Exception as e:
             print("clean_up fn the problem is: ", e)
