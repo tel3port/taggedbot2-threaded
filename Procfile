@@ -1,1 +1,1 @@
-worker: python MainTaggedBot.py
+worker: python TaggedBot.py
