@@ -315,6 +315,7 @@ if __name__ == "__main__":
                 tagged_bot.status_updater_text(gls.status_home_page, single_phrase, random_lander2)
 
                 time.sleep(randint(5, 20))
+                break
 
 
         def start_cycle():
