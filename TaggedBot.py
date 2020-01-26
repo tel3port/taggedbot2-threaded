@@ -37,7 +37,7 @@ class MainTaggedBot2:
             "proxyType": "MANUAL",
 
         }
-        self.driver = webdriver.Chrome(executable_path='./chromedriver', options=chrome_options)
+        # self.driver = webdriver.Chrome(executable_path='./chromedriver', options=chrome_options)
         chrome_options.add_argument("--headless")
         self.driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=chrome_options)
         print("my ip address", my_proxy_address)
@@ -267,8 +267,6 @@ class MainTaggedBot2:
 
 
 if __name__ == "__main__":
-    count = 0
-
     while 1:
         req_proxy = RequestProxy()  # you may get different number of proxy when  you run this at each time
         proxies = req_proxy.get_proxy_list()  # this will create proxy list
@@ -316,9 +314,9 @@ if __name__ == "__main__":
 
                 time.sleep(randint(5, 20))
 
-                break
 
         def start_cycle():
+            print(f"starting cycle num")
             tagged_bot.login()
             time.sleep(randint(30, 70))
             tagged_actions_sequence()
@@ -326,9 +324,6 @@ if __name__ == "__main__":
             tagged_bot.clean_up()
             time.sleep(randint(30, 70))
 
+            print(f" cycle num done")
 
         start_cycle()
-        count += 1
-
-        if count == 3:
-            pass
