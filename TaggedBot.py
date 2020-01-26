@@ -292,30 +292,22 @@ if __name__ == "__main__":
         tagged_bot = MainTaggedBot2(random_email_key, accounts.get(random_email_key), random_proxy)
 
         def tagged_actions_sequence():
-            for i in range(randint(30, 70)):
-                print(f"tagged action sequence running loop num: {i}")
-                phrase_list = tagged_bot.read_phrases_from_csv(gls.phrases_csv)
-                single_phrase = phrase_list[randint(0, len(phrase_list) - 1)]
-                complement_list = tagged_bot.read_complements_from_csv(gls.complements_csv)
-                single_comp = complement_list[randint(0, len(complement_list) - 1)]
-                static_user_url_list = tagged_bot.read_links_from_csv(gls.user_urls_csv)
-                single_user_url = static_user_url_list[randint(0, len(static_user_url_list) - 1)]
 
-                random_lander1 = ""
-                if i % randint(3, 7) == 0:
-                    random_lander1 = gls.single_lander_source()
-                tagged_bot.follow_and_dm_single_user(user_link=single_user_url[0], s_comp=single_comp, random_lander=random_lander1)
+            print(f"tagged action sequence running loop num: {i}")
+            phrase_list = tagged_bot.read_phrases_from_csv(gls.phrases_csv)
+            single_phrase = phrase_list[randint(0, len(phrase_list) - 1)]
+            complement_list = tagged_bot.read_complements_from_csv(gls.complements_csv)
+            single_comp = complement_list[randint(0, len(complement_list) - 1)]
+            static_user_url_list = tagged_bot.read_links_from_csv(gls.user_urls_csv)
+            single_user_url = static_user_url_list[randint(0, len(static_user_url_list) - 1)]
 
-                time.sleep(randint(5, 20))
+            tagged_bot.follow_and_dm_single_user(user_link=single_user_url[0], s_comp=single_comp, random_lander=gls.single_lander_source())
 
-                random_lander2 = ""
-                if i % randint(3, 7) == 0:
-                    random_lander2 = gls.single_lander_source()
+            time.sleep(randint(5, 20))
 
-                tagged_bot.status_updater_text(gls.status_home_page, single_phrase, random_lander2)
+            tagged_bot.status_updater_text(gls.status_home_page, single_phrase, gls.single_lander_source())
 
-                time.sleep(randint(5, 20))
-
+            time.sleep(randint(5, 20))
 
 
         def start_cycle():
