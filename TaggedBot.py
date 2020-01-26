@@ -52,7 +52,7 @@ class MainTaggedBot2:
         pw_xpath = '//*[contains(@name,"password")]'
         sign_in_btn_xpath = '//*[contains(@id,"submit_button")]'
 
-        time.sleep(5)
+        time.sleep(25)
 
         # click login button
         try:
