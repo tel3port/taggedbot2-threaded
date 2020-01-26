@@ -292,8 +292,6 @@ if __name__ == "__main__":
         tagged_bot = MainTaggedBot2(random_email_key, accounts.get(random_email_key), random_proxy)
 
         def tagged_actions_sequence():
-
-            print(f"tagged action sequence running loop num: {i}")
             phrase_list = tagged_bot.read_phrases_from_csv(gls.phrases_csv)
             single_phrase = phrase_list[randint(0, len(phrase_list) - 1)]
             complement_list = tagged_bot.read_complements_from_csv(gls.complements_csv)
