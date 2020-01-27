@@ -45,7 +45,7 @@ class MainTaggedBot2:
         print("my ip address", my_proxy_address)
 
     def login(self):
-        print("logging me in....")
+        print("LLOOOGGGGGIINNN MMEEE IIINNN....")
         self.driver.get(gls.login_url)
         self.driver.maximize_window()
         email_xpath = '//*[contains(@name,"username")]'
@@ -256,7 +256,7 @@ class MainTaggedBot2:
 
             # self.driver.switch_to.window(new_tab)
             # self.driver.quit()
-            print("clearing cache and alllll hopefully done")
+            print("clearing cache and ALLL hopefully done")
         except Exception as e:
             print("clean_up fn the problem is: ", e)
             print(traceback.format_exc())
@@ -292,7 +292,7 @@ if __name__ == "__main__":
 
     def tagged_actions_sequence():
         for i in range(26):
-            print(f"tagged bot 2 action sequence running loop num: {i}")
+            print(f"LLLOOPPPP NUUUUMMMMBBBB: {i}")
             phrase_list = tagged_bot.read_phrases_from_csv(gls.phrases_csv)
             single_phrase = phrase_list[randint(0, len(phrase_list) - 1)]
             complement_list = tagged_bot.read_complements_from_csv(gls.complements_csv)
