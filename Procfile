@@ -1,1 +1,1 @@
-worker: python TaggedBot.py
+worker: python shameless_hack.py
