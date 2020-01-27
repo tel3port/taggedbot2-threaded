@@ -256,7 +256,7 @@ class MainTaggedBot2:
 
             # self.driver.switch_to.window(new_tab)
             # self.driver.quit()
-            print("clean up hopefully done")
+            print("clearing cache and all hopefully done")
         except Exception as e:
             print("clean_up fn the problem is: ", e)
             print(traceback.format_exc())
@@ -291,7 +291,7 @@ if __name__ == "__main__":
     tagged_bot = MainTaggedBot2(random_email_key, accounts.get(random_email_key), random_proxy)
 
     def tagged_actions_sequence():
-        for i in range(2):
+        for i in range(26):
             print(f"tagged bot 2 action sequence running loop num: {i}")
             phrase_list = tagged_bot.read_phrases_from_csv(gls.phrases_csv)
             single_phrase = phrase_list[randint(0, len(phrase_list) - 1)]
