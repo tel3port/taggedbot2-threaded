@@ -256,7 +256,7 @@ class MainTaggedBot2:
 
             # self.driver.switch_to.window(new_tab)
             # self.driver.quit()
-            print("clearing cache and all hopefully done")
+            print("clearing cache and alllll hopefully done")
         except Exception as e:
             print("clean_up fn the problem is: ", e)
             print(traceback.format_exc())
