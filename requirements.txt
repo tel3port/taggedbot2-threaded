@@ -1,4 +1,5 @@
 pip
 selenium==3.141.0
 http-request-randomizer==1.2.3
+heroku3==4.2.1
 
