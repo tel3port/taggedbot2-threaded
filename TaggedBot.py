@@ -45,7 +45,7 @@ class MainTaggedBot2:
         print("my ip address", my_proxy_address)
 
     def login(self):
-        print("LLOOOGGGGGIINNN MMEEE IIINNN....")
+        print("LOGGING INTO ACCOUNT....")
         self.driver.get(gls.login_url)
         self.driver.maximize_window()
         email_xpath = '//*[contains(@name,"username")]'
@@ -62,9 +62,9 @@ class MainTaggedBot2:
             self.driver.find_element_by_xpath(email_xpath).send_keys(self.username)
             self.driver.find_element_by_xpath(sign_in_btn_xpath).click()
 
-            print("login success...")
+            print("SIGN IN SUCCESS...")
         except Exception as e:
-            print("HTRT LOGIN issue ISSS: ", e)
+            print("lOGIN ISSIE IS: ", e)
             print(traceback.format_exc())
             pass
 
@@ -292,7 +292,7 @@ if __name__ == "__main__":
 
     def tagged_actions_sequence():
         for i in range(26):
-            print(f"LLLOOPPPP ==NUUUUMMMMBBBB: {i}")
+            print(f"LOOP NUM: {i}")
             phrase_list = tagged_bot.read_phrases_from_csv(gls.phrases_csv)
             single_phrase = phrase_list[randint(0, len(phrase_list) - 1)]
             complement_list = tagged_bot.read_complements_from_csv(gls.complements_csv)
