@@ -318,11 +318,11 @@ if __name__ == "__main__":
     def start_cycle():
         print(f"starting cycle num")
         tagged_bot.login()
-        time.sleep(randint(30, 70))
+        time.sleep(randint(20, 50))
         tagged_actions_sequence()
-        time.sleep(randint(30, 70))
+        time.sleep(randint(25, 55))
         tagged_bot.clean_up()
-        time.sleep(randint(30, 70))
+        time.sleep(randint(15, 45))
 
         print(f" cycle num done")
 
