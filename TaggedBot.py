@@ -292,7 +292,7 @@ if __name__ == "__main__":
 
     def tagged_actions_sequence():
         for i in range(26):
-            print(f"LLLOOPPPP NUUUUMMMMBBBB: {i}")
+            print(f"LLLOOPPPP ==NUUUUMMMMBBBB: {i}")
             phrase_list = tagged_bot.read_phrases_from_csv(gls.phrases_csv)
             single_phrase = phrase_list[randint(0, len(phrase_list) - 1)]
             complement_list = tagged_bot.read_complements_from_csv(gls.complements_csv)
